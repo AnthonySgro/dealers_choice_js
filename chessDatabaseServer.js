@@ -15,14 +15,27 @@ app.use(morgan('dev'));
 app.use(express.static('public'));
 
 //routes
-app.get("/", (req, res) => {
-    res.send(homepage());
+app.get("/", async (req, res, next) => {
+    try {
+        const data = await client.query(`
+            SELECT * FROM games;
+        `);
+        const numberOfGames = data.rows.length;
+        res.send(homepage(numberOfGames));
+    } catch (error) { next(error) }
 })
 
-app.get("/index.html", (req, res) => {
-    res.send(homepage());
+app.get("/index.html", async (req, res, next) => {
+    try {
+        const data = await client.query(`
+            SELECT * FROM games;
+        `);
+        const numberOfGames = data.rows.length;
+        res.send(homepage(numberOfGames));
+    } catch (error) { next(error) }
 })
 
+//async bc we are making a request to the database
 app.get("/database", async (req, res, next) => {
     try {
         const data = await client.query(`
@@ -43,6 +56,7 @@ app.get("/database", async (req, res, next) => {
     } catch (error) { next(error) }
 })
 
+//async bc we are making a request to the database
 app.get("/database/:id", async (req, res, next) => {
     try {
         const data = await client.query(`

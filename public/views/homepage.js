@@ -1,6 +1,7 @@
 const html = require("html-template-tag");
 
-module.exports = homepage = () => {
+module.exports = homepage = (numberOfGames) => {
+
     const htmlExport = html`
 <!DOCTYPE html>
 <html lang="en">
@@ -36,7 +37,7 @@ module.exports = homepage = () => {
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right ml-2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                     </button>
                 </a>
-                <a href="/imlucky">
+                <a href="/database/${Math.floor(Math.random() * numberOfGames) + 1}">
                     <button id="imlucky">
                         <p>I'm Feeling Lucky...</p>
                     </button></a>
