@@ -1,4 +1,5 @@
---BELOW IS DATABASE SEED--
+module.exports = sqlSeed = () => {
+    const sql = `
 DROP TABLE IF EXISTS player_freq;
 DROP TABLE IF EXISTS games;
 DROP TABLE IF EXISTS players;
@@ -79,25 +80,6 @@ FROM (
 ) AS foo
 GROUP BY player_id
 ORDER BY player_id;
-
----------------------------BEYOND IS JUST FLUFF--------------------------------
-
--- gets us a list of games and short info used to display on database page
-SELECT games.game_id,
-       games.event_name, 
-       games.place,
-       p1.name AS player1_name, 
-       p2.name AS player2_name
-FROM games
-JOIN players AS p1 ON p1.id = games.player1_id
-JOIN players AS p2 ON p2.id = games.player2_id
-ORDER BY games.game_id;
-
-
--- gets a list of players and # of games they played by name
-SELECT p.name AS player_name,
-       player_id, 
-       number_of_games
-FROM player_freq
-JOIN players AS p ON p.id = player_freq.player_id
-ORDER BY player_id;
+`
+return sql;
+}
