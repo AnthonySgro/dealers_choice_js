@@ -1,0 +1,53 @@
+main {
+    align-items: center;
+}
+
+.centerfold > h1 {
+    margin: .2rem;
+}
+
+.centerfold > h1:last-child {
+    margin-bottom: 3rem;
+}
+
+#game-info-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    list-style-type: none;
+    margin: 0rem;
+}
+
+#game-info-list > li {
+    margin-right: 2.5rem;
+}
+
+#game-detail-container {
+    background-color: #ef476f;
+    border-radius: 1rem;
+}
+
+#gif {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#gif > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#board-viewer {
+    width: 100%;
+    height: 30rem;
+    margin: 1rem;
+    border-radius:1rem;
+}
+
+iframe {
+    padding: 2rem;
+}

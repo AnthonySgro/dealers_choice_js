@@ -1,0 +1,211 @@
+html {
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0rem;
+    background-color:  #073b4c;
+}
+
+/* HEADER */
+
+header {
+    width: 100%;
+    height: 5rem;
+    margin: 0rem;
+    background-color: #0420298a;
+    opacity: 98%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+header > nav {
+    display: flex;
+    justify-content: space-between;
+    margin: 0rem 2rem;
+    align-items: center;
+}
+
+nav {
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+}
+
+#database-nav-link {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.7);
+    transition: all .2s ease-out;
+}
+
+#database-nav-link {
+    font-size: 1.2rem;
+    color: #ffd166;
+    position: relative;
+    transition: all .1s ease-out;
+}
+
+#database-nav-link:hover {
+    color: #d8b156;
+    font-size: 1.3rem;
+}
+
+#main-text {
+    font-size: 2rem;
+    font-weight: bold;
+    align-self: center;
+    text-decoration: none;
+    color: #ffd166;
+    text-transform: uppercase;
+    transition: all .1s ease-out;
+}
+
+#main-text:hover {
+    color: white;
+}
+
+/* MAIN */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 4rem 5rem 5rem 5rem;
+}
+
+.centerfold {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+.centerfold > h1 {
+    color: white;
+    font-weight: 700;
+    font-size: 3rem;
+    margin-bottom: .2rem;
+    text-align: center;
+}
+
+.centerfold > p {
+    font-size: 1.2rem;
+    color: #CFD8DC;
+    text-align: center;
+}
+
+.centerfold a {
+    text-decoration: none;
+}
+
+#main-btn-container {
+    display: flex;
+}
+
+.centerfold button {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ef476f;
+    box-shadow: 0 8px 16px #ef476e5d;
+    outline: none;
+    border: none;
+    padding: 0rem 2rem;
+    text-transform: uppercase;
+    font-size: 15px;
+    border-radius: .3rem;
+    transition: all .2s ease-out;
+    margin: .2rem 1rem;
+}
+
+#play-now:hover, #imlucky:hover {
+    cursor: pointer;
+    color: white;
+    box-shadow: 0 10px 20px #ef476e5d;
+}
+
+#play-now:active, #imlucky:active {
+    box-shadow: 0 0 0;
+}
+
+.game-entry {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.game-entry > ul {
+    padding: 0rem;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h3 {
+    margin: .5rem;
+}
+
+.game-info-list {
+    margin: .5rem;
+}
+
+.game-info-list > li {
+    margin: 0rem;
+}
+
+.game-info-list > li > p {
+    margin: 0rem;
+}
+
+.explore-game-btn {
+    background-color: #ef476f;
+    box-shadow: 0 0 0;
+    outline: none;
+    border: none;
+    padding: .3rem .6rem;
+    font-size: 14px;
+    border-radius: .3rem;
+    transition: all .2s ease-out;
+    margin: .5rem 1rem 0rem 1rem;
+}
+
+.explore-game-btn:hover {
+    cursor: pointer;
+    color: white;
+}
+
+section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.game-entry {
+    width: 33%;
+    margin: 1rem;
+    background-color: #e1e1e1;
+}
+
+.matchup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+li > h3 {
+    margin: 0rem;
+}
+
+li > h3:last-child {
+    margin-bottom: 1rem;
+}
