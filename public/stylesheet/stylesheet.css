@@ -28,12 +28,22 @@ header > nav {
     justify-content: space-between;
     margin: 0rem 2rem;
     align-items: center;
+    list-style: none;
 }
 
-nav {
+#nav-bar-components {
     display: flex;
-    list-style: none;
-    justify-content: space-around;
+    justify-content: space-evenly;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #d7d7d7;
+    margin-right: 2rem;
+}
+
+.nav-link:hover {
+    color: #ffffff;
 }
 
 #database-nav-link {
@@ -208,4 +218,59 @@ li > h3 {
 
 li > h3:last-child {
     margin-bottom: 1rem;
+}
+
+#player-table {
+    display: flex;
+    background-color: #d8b156;
+    padding: 1rem;
+    margin: 3rem 1rem 1rem 1rem;
+    border-radius: 1rem;
+    width: 100%
+}
+
+#player-table > div {
+    display: flex;
+    flex-direction: column;
+}
+
+#player-table p {
+    color: white;
+}
+
+#player-table h3 {
+    color: white;
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+
+
+#player-table a {
+    color: white;
+    text-decoration: none;
+    padding: .5rem;
+    border-radius: .5rem;
+    transition: all .1s ease-out;
+}
+
+#player-table a:hover {
+    color: #d8b156;
+    background-color: #073b4c;
+}
+
+#player-table a:active {
+    color: #967b3b;
+    background-color: #031a22;
+}
+
+#player-games {
+    align-items: flex-end;
+}
+
+#player-database {
+    width: 30rem;
+}
+
+#player-database > div {
+    width: 100%;
 }

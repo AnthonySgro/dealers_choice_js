@@ -1,3 +1,4 @@
+DROP TABLE IF EXISTS player_freq;
 DROP TABLE IF EXISTS games;
 DROP TABLE IF EXISTS players;
 
@@ -66,7 +67,7 @@ INSERT INTO games (player1_id, player2_id, event_name, place, content, gif)
 VALUES ((SELECT id from players where name='Mikhail Tal'), (SELECT id from players where name='Vasily Smyslov'), '1959 Candidates Tournament', 'Zagreb, Croatia', 'Mikhail Tals prize-winning victory over Vasily Smyslov in the 1959 Candidates tournament was something of a passing of the torch. Smyslov had played three world chess championship matches against Mikhail Botvinnik in the 50s and stood as Botvinniks greatest challenger, but with his victory in this event, Tal earned the right to battle Botvinnik in 1960. The game itself shows Smyslov playing uncharacteristically sharply on the black side of a Caro-Kann. Tal soon offers a piece sacrifice creating dangerous threats. When Smyslov misses Tals spectacular 19th move, its all over.', '//www.chess.com/emboard?id=7563118');
 
 
-
+-- gets us a list of games and short info used to display on database page
 SELECT games.game_id,
        games.event_name, 
        games.place,
@@ -76,3 +77,27 @@ FROM games
 JOIN players AS p1 ON p1.id = games.player1_id
 JOIN players AS p2 ON p2.id = games.player2_id
 ORDER BY games.game_id;
+
+
+-- gets a list of players and number of games they played
+CREATE TABLE player_freq
+AS
+SELECT player_id, COUNT(*) AS number_of_games
+FROM (
+    SELECT games.player1_id AS player_id
+    FROM games
+    UNION ALL
+        SELECT games.player2_id AS player_id
+        FROM games
+) AS foo
+GROUP BY player_id
+ORDER BY player_id;
+
+
+-- gets a list of players and # of games they played by name
+SELECT p.name AS player_name,
+       player_id, 
+       number_of_games
+FROM player_freq
+JOIN players AS p ON p.id = player_freq.player_id
+ORDER BY player_id;
