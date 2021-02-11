@@ -10,8 +10,6 @@ router.get("/", async (req, res, next) => {
     try {
         const players = await getAllPlayerDetails();
         const allPlayers = await getPlayers();
-        console.log(players);
-        console.log(allPlayers);
         res.send(playerspage(players));
     } catch (error) { next(error) }
 })
