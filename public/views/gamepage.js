@@ -50,9 +50,9 @@ module.exports = homepage = (game) => {
                     <li id="detail-content">
                         <p>${game.content}</p>
                     </li>
-                    <li id="gif">
+                    <li id="embedLink">
                         <div id="board-viewer">
-                            <iframe id="7563018" allowtransparency="true" frameborder="0" style="height:100%;width:60%;border:none;" src="${game.gif}"></iframe>
+                            <iframe id="7563018" allowtransparency="true" frameborder="0" style="height:100%;width:60%;border:none;" src="${game.embedlink}"></iframe>
                             <script>window.addEventListener("message",e=>{e['data']&&"7563018"===e['data']['id']&&document.getElementById(e['data']['id'])&&(document.getElementById(e['data']['id']).style.height=e['data']['frameHeight']+30px)});</script>
                         </div>
                     </li>

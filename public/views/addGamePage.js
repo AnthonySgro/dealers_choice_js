@@ -39,21 +39,21 @@ module.exports = addGamePage = () => {
     </header>
     <main id="sign-up-body">
         <div class="container">
-            <form id="form" class="form" method="POST" action="/database">
+            <form id="form" class="form" method="POST" action="/addgame/">
                 <h2>Enter New Game</h2>
                 <div class="form-control">
-                    <label for="player-1">Player 1</label>
-                    <input id="player-1" name="player-1" type="text" placeholder="Enter player 1">
+                    <label for="player1">Player 1</label>
+                    <input id="player1" name="player1" type="text" placeholder="Enter player 1">
                     <small>Error message</small>
                 </div>
                 <div class="form-control">
-                    <label for="player-2">Player 2</label>
-                    <input type="text" name="player-2" id="player-2" placeholder="Enter player 2">
+                    <label for="player2">Player 2</label>
+                    <input type="text" name="player2" id="player2" placeholder="Enter player 2">
                     <small>Error message</small>
                 </div>
                 <div class="form-control">
-                    <label for="event-name">Event Name</label>
-                    <input id="event-name" name="event-name" type="text" placeholder="Enter event name">
+                    <label for="eventName">Event Name</label>
+                    <input id="eventName" name="eventName" type="text" placeholder="Enter event name">
                     <small>Error message</small>
                 </div>
                 <div class="form-control">
@@ -67,8 +67,8 @@ module.exports = addGamePage = () => {
                     <small>Error message</small>
                 </div>
                 <div class="form-control">
-                    <label for="gif">Chess.com Walkthrough Link</label>
-                    <input id="gif" name="gif" type="text" placeholder="Enter chess.com link">
+                    <label for="embedLink">Chess.com Walkthrough Link</label>
+                    <input id="embedLink" name="embedLink" type="text" value="//www.chess.com/emboard?id=*******">
                     <small>Error message</small>
                 </div>
                 <button type="submit" id="btn">Submit</button>

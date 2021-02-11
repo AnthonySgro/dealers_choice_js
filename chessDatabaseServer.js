@@ -16,6 +16,7 @@ const errorpage = require('./public/views/errorPage');
 const morgan = require("morgan");
 app.use(morgan('dev'));
 app.use(express.static('public'));
+app.use(express.urlencoded({ extended: false }));
 
 //start-up SQL client
 const setUp = async() => {
@@ -52,6 +53,7 @@ app.get("*", (req, res, next) => {
 
 //this middleware is my error handler
 app.use((err, req, res, next) => {
+    console.log(err);
     res.send(errorpage());
 })
 

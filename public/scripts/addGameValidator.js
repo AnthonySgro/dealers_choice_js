@@ -1,11 +1,11 @@
 const form = document.getElementById('form');
 const btn = document.getElementById('btn');
-const player1 = document.getElementById('player-1');
-const player2 = document.getElementById('player-2');
-const eventName = document.getElementById('event-name');
+const player1 = document.getElementById('player1');
+const player2 = document.getElementById('player2');
+const eventName = document.getElementById('eventName');
 const place = document.getElementById('place');
 const content = document.getElementById('content');
-const gif = document.getElementById('gif');
+const embedLink = document.getElementById('embedLink');
 
 // Show input error message
 function showError(input, message) {
@@ -24,7 +24,9 @@ function showSuccess(input) {
 // Check email validity
 function checkLink(input) {
     const re = /((([A-Za-z]{3,9}:(?:\/\/)?)(?:[-;:&=\+\$,\w]+@)?[A-Za-z0-9.-]+|(?:www.|[-;:&=\+\$,\w]+@)[A-Za-z0-9.-]+)((?:\/[\+~%\/.\w-_]*)?\??(?:[-\+=&;%@.\w_]*)#?(?:[\w]*))?)/
-    if (re.test(input.value.trim())) {
+    if (input.value.includes('*')) {
+        showError(input, 'Fill in remaining asterisks');
+    } else if (re.test(input.value.trim())) {
         showSuccess(input);
     } else {
         showError(input, 'Link is not valid');
@@ -63,13 +65,13 @@ function getFieldName(input) {
 form.addEventListener('submit', function(e) {
     e.preventDefault();
 
-    checkRequired([player1, player2, eventName, place, content, gif]);
+    checkRequired([player1, player2, eventName, place, content, embedLink]);
     checkLength(player1, 5, 50);
     checkLength(player2, 5, 50);
     checkLength(eventName, 3, 50);
     checkLength(place, 3, 40);
     checkLength(content, 20, 10000);
-    checkLink(gif);
+    checkLink(embedLink);
 
     let allValid = true;
 

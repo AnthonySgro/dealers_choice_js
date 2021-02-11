@@ -26,16 +26,17 @@ main {
 #game-detail-container {
     background-color: #ef476f;
     border-radius: 1rem;
+    min-width: 50rem;
 }
 
-#gif {
+#embedLink {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-#gif > div {
+#embedLink > div {
     display: flex;
     justify-content: center;
     align-items: center;
