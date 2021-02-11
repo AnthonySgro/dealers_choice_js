@@ -52,7 +52,7 @@ app.use((err, req, res, next) => {
     res.send(errorpage());
 })
 
-const PORT = 42069;
+const PORT = 3000;
 
 app.listen(PORT, () => {
   console.log(`App listening in port ${PORT}`);
