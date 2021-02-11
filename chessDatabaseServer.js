@@ -13,8 +13,8 @@ const homepage = require('./public/views/homePage');
 const errorpage = require('./public/views/errorPage');
 
 //middleware
-//const morgan = require("morgan");
-//app.use(morgan('dev'));
+const morgan = require("morgan");
+app.use(morgan('dev'));
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: false }));
 
