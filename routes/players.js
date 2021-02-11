@@ -9,7 +9,6 @@ const playerdetail = require('../public/views/playerDetail');
 router.get("/", async (req, res, next) => {
     try {
         const players = await getAllPlayerDetails();
-        const allPlayers = await getPlayers();
         res.send(playerspage(players));
     } catch (error) { next(error) }
 })
