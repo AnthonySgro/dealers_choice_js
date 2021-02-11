@@ -76,7 +76,6 @@ form.addEventListener('submit', function(e) {
     let allValid = true;
 
     const entries = [...form.querySelectorAll('div')];
-    console.log(entries);
     entries.forEach(entry => {
         if ([...entry.classList].includes('error')) {
             allValid = false;
