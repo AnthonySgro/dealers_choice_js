@@ -7,6 +7,14 @@ const syncAndSeed = async() => {
     await client.query(SQL);
 }
 
+const getRandomGame = async() => {
+    try {
+        return (await client.query(`SELECT * FROM GAMES
+                                    ORDER BY RANDOM()
+                                    LIMIT 1`)).rows[0];
+    } catch (err) { console.log(err) }
+}
+
 const updatePlayerFreqTable = async() => {
     try {
         return (await client.query(`DROP TABLE IF EXISTS player_freq;
@@ -40,8 +48,17 @@ const getGames = async() => {
                                 JOIN players AS p1 ON p1.id = games.player1_id
                                 JOIN players AS p2 ON p2.id = games.player2_id
                                 ORDER BY games.game_id;`)).rows;
-    } catch (err) {console.log(err)}
-    
+    } catch (err) { console.log(err) }
+}
+
+const getAllGamesDetails = async() => {
+    try {
+        return (await client.query(`SELECT games.game_id, games.event_name, games.place, games.content, games.embedLink, p1.name AS player1_name, p2.name AS player2_name
+                                    FROM games
+                                    JOIN players AS p1 ON p1.id = games.player1_id
+                                    JOIN players AS p2 ON p2.id = games.player2_id
+                                    ORDER BY games.game_id;`)).rows;
+    } catch (err) { console.log(err) }
 }
 
 const createPlayer = async({ player }) => {
@@ -83,6 +100,8 @@ module.exports = {
     getPlayerID,
     getAllPlayerDetails,
     getGames,
+    getAllGamesDetails,
     createPlayer,
-    addGame
+    addGame,
+    getRandomGame
 };

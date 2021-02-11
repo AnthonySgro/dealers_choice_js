@@ -1,7 +1,7 @@
 //server and database info
 const express = require('express');
 const app = express();
-const { client, syncAndSeed } = require('./sql');
+const { client, syncAndSeed, getRandomGame } = require('./sql');
 
 //routes
 const databaseRoute = require('./routes/database');
@@ -32,12 +32,7 @@ setUp();
 //routes
 app.get("/", async (req, res, next) => {
     try {
-        const data = await client.query(`
-            SELECT * FROM games
-            ORDER BY RANDOM()
-            LIMIT 1;
-        `);
-        const randomGame = data.rows[0];
+        const randomGame = await getRandomGame();
         res.send(homepage(randomGame));
     } catch (error) { next(error) }
 })
