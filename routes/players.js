@@ -1,6 +1,6 @@
 // initialize router and sql client methods
 const router = require('express').Router();
-const { getAllPlayerDetails, getGames, getPlayers } = require('../sql');
+const { getAllPlayerDetails, getGames } = require('../sql');
 
 //html views
 const playerspage = require('../public/views/playersPage');
