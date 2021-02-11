@@ -18,6 +18,9 @@ module.exports = playerspage = (players) => {
         <nav>
             <a id="main-text" href="/">Dealer's Choice</a>
             <div id="nav-bar-components">
+                <a class="nav-link" href="/addgame">
+                    Add Game
+                </a>
                 <a class="nav-link" href="/players">
                     Browse by Player
                 </a>

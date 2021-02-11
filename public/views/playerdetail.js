@@ -18,6 +18,9 @@ module.exports = playerdetail = (games, player) => {
         <nav>
             <a id="main-text" href="/">Dealer's Choice</a>
             <div id="nav-bar-components">
+                <a class="nav-link" href="/addgame">
+                    Add Game
+                </a>
                 <a class="nav-link" href="/players">
                     Browse by Player
                 </a>
@@ -30,8 +33,7 @@ module.exports = playerdetail = (games, player) => {
                 </a>
             </div>
         </nav>
-    </header>
-    <main>
+    </header>    <main>
         <div class="centerfold">
             <h1 id="welcome">
                 ${player.player_name}
